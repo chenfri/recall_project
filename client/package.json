@@ -1,0 +1,30 @@
+{
+  "name": "recall-client",
+  "version": "1.0.0",
+  "description": "React TypeScript frontend for Recall Project",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["react", "typescript", "vite"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "chart.js": "^4.4.8",
+    "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.5"
+  }
+}
