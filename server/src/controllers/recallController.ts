@@ -11,6 +11,21 @@ export const getRecallData: RequestHandler = async (req: Request, res: Response,
 
     const { startDate, endDate } = req.query as RecallFilters;
     await delay(3000);
+
+    if (startDate && isNaN(new Date(startDate).getTime())) {
+      const error = new Error('Invalid start date format');
+      return next(error);
+    }
+    if (endDate && isNaN(new Date(endDate).getTime())) {
+      const error = new Error('Invalid end date format');
+      return next(error);
+    }
+    // Check if end date is before start date
+    if (startDate && endDate && new Date(endDate) < new Date(startDate)) {
+      const error = new Error('End date cannot be before start date');
+      return next(error);
+    }
+
     const data = await loadCSVData();
     
     const from_ts = startDate ? new Date(startDate) : new Date(data[0].date);
